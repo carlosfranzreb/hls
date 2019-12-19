@@ -14,7 +14,7 @@ def compute(in_filename, out_filename):
                                                 'passive_loss_db' : [0., 0., 0., 0., 0., 0., 0.],
                                 }
                             }
-    params = dict(nb_freq_band=32, low_freq = 100., high_freq = 15000.,
+    params = dict(nb_freq_band=32, low_freq = 100., high_freq = 1000.,
             tau_level = 0.005,  level_step =1., level_max = 100.,
             calibration =  calibration,
             loss_params = loss_params,
