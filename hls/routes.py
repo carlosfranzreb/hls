@@ -1,4 +1,4 @@
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, send_file
 import os.path
 import sys
 
@@ -19,9 +19,5 @@ def home():
 
 @app.route("/output")
 def output():
-    compute("input.wav", "output.wav")
-    return render_template(
-        'output.html',
-        title='Output',
-        file=output_file
-    )
+    compute("input.wav", "hls/output.wav")
+    return send_file("output.wav")
