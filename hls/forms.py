@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import FileField, SubmitField
-from flask_wtf.file import FileRequired, FileAllowed
+from wtforms import SubmitField
+from flask_wtf.file import FileField, FileRequired, FileAllowed
 
 
 class AudioForm(FlaskForm):
-    audio = FileField('Audio', FileRequired(), FileAllowed(['wav']))
+    audio = FileField(validators=[FileRequired(), FileAllowed(['wav'])])
     submit = SubmitField('Submit')
 
